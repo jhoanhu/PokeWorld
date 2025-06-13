@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex - Primera Generación</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon-32x32.png">
+    <link rel="stylesheet" href="css/pokedex.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/pokemon-logo_v3.png" alt="Pokémon Logo">
+        </div>
+        <nav id="main-nav">
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle active">Categorías <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-dropdown-toggle active">Pokédex <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-dropdown-menu">
+                                <a href="pokedex.html" class="active">Primera Generación</a>
+                                <a href="#" class="disabled">Próximamente más generaciones</a>
+                            </div>
+                        </div>
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-dropdown-toggle">Mini Juegos <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-dropdown-menu">
+                                <a href="whos-that-pokemon.html">¿Quién es ese Pokémon?</a>
+                                <a href="guess-by-sound.html">Adivina el Pokémon por su sonido</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="index.html#instructions">Instrucciones</a></li>
+                <li><a href="index.html#about">Sobre el Proyecto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="pokedex-header">
+            <h1>Pokédex: Primera Generación</h1>
+            <p>Explora los 151 Pokémon originales de la región de Kanto</p>
+            
+            <div class="pokedex-controls">
+                <div class="search-container">
+                    <input type="text" id="pokemon-search" placeholder="Buscar por nombre o número...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="filter-container">
+                    <select id="type-filter">
+                        <option value="">Filtrar por tipo</option>
+                        <option value="normal">Normal</option>
+                        <option value="fire">Fuego</option>
+                        <option value="water">Agua</option>
+                        <option value="electric">Eléctrico</option>
+                        <option value="grass">Planta</option>
+                        <option value="ice">Hielo</option>
+                        <option value="fighting">Lucha</option>
+                        <option value="poison">Veneno</option>
+                        <option value="ground">Tierra</option>
+                        <option value="flying">Volador</option>
+                        <option value="psychic">Psíquico</option>
+                        <option value="bug">Bicho</option>
+                        <option value="rock">Roca</option>
+                        <option value="ghost">Fantasma</option>
+                        <option value="dragon">Dragón</option>
+                        <option value="dark">Siniestro</option>
+                        <option value="steel">Acero</option>
+                        <option value="fairy">Hada</option>
+                    </select>
+                    <button id="reset-filters">Reiniciar filtros</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="pokedex-container">
+            <div id="loading-spinner">
+                <div class="spinner"></div>
+                <p>Cargando Pokémon...</p>
+            </div>
+            
+            <div id="pokemon-grid" class="pokemon-grid"></div>
+            
+            <div class="pagination">
+                <button id="prev-page" disabled><i class="fas fa-chevron-left"></i> Anterior</button>
+                <span id="page-info">Página 1 de 8</span>
+                <button id="next-page">Siguiente <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+        
+        <div id="pokemon-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="pokemon-detail"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/pokemon-logo_v3.png" alt="Pokémon Logo">
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="pokedex.html">Pokédex</a></li>
+                    <li><a href="whos-that-pokemon.html">¿Quién es ese Pokémon?</a></li>
+                    <li><a href="guess-by-sound.html">Adivina por el Sonido</a></li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <h4>Información</h4>
+                <p>Este es un proyecto personal sin fines de lucro.</p>
+                <p>Pokémon y todos los nombres relacionados son marcas registradas de Nintendo.</p>
+                <p>Datos obtenidos de <a href="https://pokeapi.co/" target="_blank">PokeAPI</a>.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Proyecto Pokémon. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/pokedex.js"></script>
+</body>
+</html>
