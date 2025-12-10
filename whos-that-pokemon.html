@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quién es ese Pokémon?</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon-32x32.png">
+    <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/pokemon-logo_v3.png" alt="Pokémon Logo">
+        </div>
+        <nav id="main-nav">
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle active">Categorías <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-dropdown-toggle">Pokédex <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-dropdown-menu">
+                                <a href="pokedex.html">Primera Generación</a>
+                                <a href="#" class="disabled">Próximamente más generaciones</a>
+                            </div>
+                        </div>
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-dropdown-toggle active">Mini Juegos <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-dropdown-menu">
+                                <a href="whos-that-pokemon.html" class="active">¿Quién es ese Pokémon?</a>
+                                <a href="guess-by-sound.html">Adivina el Pokémon por su sonido</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="index.html#instructions">Instrucciones</a></li>
+                <li><a href="index.html#about">Sobre el Proyecto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="game-header">
+            <h1>¿Quién es ese Pokémon?</h1>
+            <p>¡Adivina el Pokémon por su silueta! Inspirado en el clásico segmento del anime.</p>
+        </section>
+
+        <section class="game-container whos-that-pokemon">
+            <div class="game-stats">
+                <div class="score">Puntuación: <span id="score">0</span></div>
+                <div class="streak">Racha: <span id="streak">0</span></div>
+                <div class="high-score">Mejor puntuación: <span id="high-score">0</span></div>
+            </div>
+            
+            <div class="game-area">
+                <div id="loading-game" class="loading-game">
+                    <div class="spinner"></div>
+                    <p>Cargando juego...</p>
+                </div>
+                
+                <div id="game-content" class="game-content" style="display: none;">
+                    <div class="pokemon-silhouette-container">
+                        <div class="pokemon-image-wrapper">
+                            <img id="pokemon-silhouette" src="/placeholder.svg" alt="¿Quién es ese Pokémon?">
+                        </div>
+                        <div class="question-mark">?</div>
+                    </div>
+                    
+                    <div class="options-container">
+                        <div id="options" class="options"></div>
+                    </div>
+                    
+                    <div id="result-message" class="result-message"></div>
+                    
+                    <div class="game-controls">
+                        <button id="next-pokemon" class="btn btn-game" disabled>Siguiente Pokémon</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-instructions">
+                <h3>Instrucciones:</h3>
+                <ul>
+                    <li>Se mostrará la silueta de un Pokémon aleatorio de la primera generación.</li>
+                    <li>Selecciona entre las cuatro opciones la que creas correcta.</li>
+                    <li>Ganas 10 puntos por cada respuesta correcta.</li>
+                    <li>¡Mantén tu racha para multiplicar tus puntos!</li>
+                </ul>
+            </div>
+        </section>
+        
+        <div id="game-over-modal" class="modal">
+            <div class="modal-content">
+                <h2>¡Fin del juego!</h2>
+                <div class="final-score">
+                    <p>Puntuación final: <span id="final-score">0</span></p>
+                    <p>Mejor racha: <span id="final-streak">0</span></p>
+                </div>
+                <div class="share-score">
+                    <p>¡Comparte tu puntuación!</p>
+                </div>
+                <button id="play-again" class="btn btn-primary">Jugar de nuevo</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/pokemon-logo_v3.png" alt="Pokémon Logo">
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="pokedex.html">Pokédex</a></li>
+                    <li><a href="whos-that-pokemon.html">¿Quién es ese Pokémon?</a></li>
+                    <li><a href="guess-by-sound.html">Adivina por el Sonido</a></li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <h4>Información</h4>
+                <p>Este es un proyecto personal sin fines de lucro.</p>
+                <p>Pokémon y todos los nombres relacionados son marcas registradas de Nintendo.</p>
+                <p>Datos obtenidos de <a href="https://pokeapi.co/" target="_blank">PokeAPI</a>.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Proyecto Pokémon. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/whos-that-pokemon.js"></script>
+</body>
+</html>
